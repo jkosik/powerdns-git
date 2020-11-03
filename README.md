@@ -12,7 +12,7 @@ $ ./pdns-zoner.go -h
 
 Usage of ./pdns-zoner:
   -a string
-    	PowerDNS API URL (default "https://api.dnsaas.in.pan-net.cloud/api")
+    	PowerDNS API URL (default "https://api.dnsaas.domain.cloud/api")
   -c	Don't apply changes, only check & validate zone file(s)
   -t string
     	PowerDNS token (default "token123")

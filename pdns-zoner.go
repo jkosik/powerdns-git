@@ -20,7 +20,7 @@ const TIMEOUT = time.Duration(10)
 
 var token = flag.String("t", "token123", "PowerDNS token")
 var zonePath = flag.String("z", "your.zone.eu", "Zone file to process")
-var apiUrlBase = flag.String("a", "https://api.dnsaas.yourdomain.cloud/api", "PowerDNS API URL")
+var apiUrlBase = flag.String("a", "https://api.dnsaas.domain.cloud/api", "PowerDNS API URL")
 var checkOnly = flag.Bool("c", false, "Don't apply changes, only check & validate zone file(s)")
 
 type RRSet []struct {
