@@ -1,0 +1,18 @@
+image: gitlab.tools.in.pan-net.eu:4567/docker-images/docker-sec-netsec:alpine
+
+stages:
+  - update-zone
+
+sandbox.security.in.pan-net.eu:
+  stage:
+    - update-zone
+  variables:
+    TOKEN: "$SANDBOX-SECURITY"
+    ZONEFILE: "zones/sandbox.security.in.pan-net.eu.yaml"
+  script:
+    - pdns-zoner -t $TOKEN -z $ZONEFILE
+  only:
+    refs:
+      - master
+    changes:
+      - $ZONEFILE

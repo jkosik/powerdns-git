@@ -1,0 +1,43 @@
+---
+# zone config, dont touch
+### DANGER BEGINS
+- name: yourzone.domain.eu
+  type: NS
+  records:
+    - content: ns1.domain.eu.
+    - content: ns2.domain.eu.
+### DANGER ENDS
+
+# your zone RR Sets
+- name: "host1"
+  type: "A"
+  ttl: 300 #optional (defaults to 0)
+  records:
+    - content: "1.1.1.1"
+      disabled: false #optional (defaults to false)
+    - content: "2.2.2.2"
+      disabled: false #optional (deafults to false)
+  comments: # optional
+    - content: "your-comment" #optional
+      account: "random-value" #optional
+
+- name: "host2"
+  type: "CNAME"
+  records:
+    - content: "host.anyzone.domain.eu."
+
+- name: "host3"
+  type: "TXT"
+  records:
+    - content: "h78fshfjdhJHuh8dhjfds"
+
+- name: "host4"
+  type: "MX"
+  records:
+    - content: "10 mail.domain.eu."
+    - content: "20 mail2.domain.eu."
+
+- name: "subzone" #delegating subzone.yourzone.domain.eu to external NS
+  type: "NS"
+  records:
+    - content: "ns.anyzone.domain.eu."
