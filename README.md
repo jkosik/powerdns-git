@@ -37,7 +37,7 @@ $ docker build -t powerdns-git:latest .
 2. Create $TOKEN Secret variable in Gitlab project settings
 
 3. Create CI Job in .gitlab-ci.yaml.
-```
+```yaml
 image: path-to-your-image-registry/powerdns-git:latest
 
 your.domain.eu:
